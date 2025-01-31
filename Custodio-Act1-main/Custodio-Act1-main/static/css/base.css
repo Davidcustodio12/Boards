@@ -1,0 +1,40 @@
+h1 {
+    color: #003366;
+    margin-left: 50px;
+    font-size: 60px;
+}
+
+/*.backGround {*/
+/*    height: 300px;*/
+/*    width: auto;*/
+/*}*/
+
+a {
+    /*margin-left: 10px;*/
+    /*background: gray;*/
+    color: #092e20;
+    font-size: 40px;
+    /*text-decoration-color: transparent;*/
+    /*text-align: left;*/
+    box-shadow: inset 0 0 0 0 gray;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    text-decoration: none;
+    position: relative;
+
+}
+
+a:hover {
+    /*background-color: lightgrey;*/
+
+    box-shadow: inset 100px 0 0 0 gray;
+  color: white;
+
+}
+
+
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
