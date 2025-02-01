@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="product-list-container">
+    <h1>Product List</h1>
+
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in product_list %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td class="description">{{ product.description }}</td>  <td>{{ product.price }}</td>
+                <td>{{ product.stock }}</td>
+                <td>{{ product.category }}</td>
+                <td class="actions">
+                    <a href="{% url 'product_detail' pk=product.pk %}" class="btn btn-view">View</a>
+                    <a href="{% url 'product_update' pk=product.pk %}" class="btn btn-edit">Edit</a>
+                    <a href="{% url 'product_delete' pk=product.pk %}" class="btn btn-delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'product_create' %}" class="btn btn-create">Create New Product</a>
+</div>
+{% endblock content %}
